@@ -3,10 +3,10 @@ package db;
 import java.util.Date;
 
 public class MUSIC {
-	private int musicID;
-	private String musicTitle;
-	private String musicIntro;
-	private Date musicDate;
+	private int musicID;			// 식별 목적
+	private String musicTitle;		// 곡 제목
+	private String musicIntro;		// 곡 소개, 설명
+	private Date musicDate;			// 업로드 날짜
 	
 	public int getMusicID() {
 		return musicID;
