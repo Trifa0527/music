@@ -43,6 +43,21 @@ public class MUSICDAO {
 		return -1;
 	}
 	
+	public int getID(String title) {
+		String SQL = "SELECT ID FROM INFO WHERE TITLE = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, title);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	public String getTitle(int id) {
 		String SQL = "SELECT TITLE FROM INFO WHERE ID = ?";
 		try {
