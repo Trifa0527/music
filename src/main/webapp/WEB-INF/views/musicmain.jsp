@@ -6,9 +6,15 @@
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="resources/logo.ico">
 <link rel="stylesheet" href="resources/css/musicmain.css">
+<script src="resources/js/musicmainanime.js"></script>
 <title>Trifa's music</title>
 </head>
 <body id="bgcolor">
-	<script src="resources/js/musicmain.js"></script>
+	<div id="symbol">
+		<div class="logo">
+		</div>
+		<div class="letter">
+		</div>
+	</div>
 </body>
 </html>

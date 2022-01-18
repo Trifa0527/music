@@ -4,3 +4,47 @@
 	transition-property: background-color;
     transition-duration: 2s;
 }
+#symbol{
+	position: absolute;
+    width: 20%;
+    top: 50%;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -10%;
+    background-color: gray;
+}
+#symbol:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.logo{
+    position: absolute;
+    width: 70%;
+    top: 35%;
+    left: 50%;
+    margin-top: -35%; 
+    margin-left: -35%;
+    background-color: red;
+    text-align: center;
+}
+.logo:before{
+	content: "";
+    display: block;
+    padding-top: 100%;
+}
+.letter{
+	position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: 30%; 
+    margin-left: -50%;
+    background-color: blue;
+    text-align: center;
+}
+.letter:before{
+	content: "";
+    display: block;
+    padding-top: 20%;
+}
