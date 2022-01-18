@@ -1,0 +1,6 @@
+@charset "UTF-8";
+#bgcolor{
+	background-color: black;
+	transition-property: background-color;
+    transition-duration: 2s;
+}

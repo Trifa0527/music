@@ -17,7 +17,7 @@ public class MusicMainController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MusicMainController.class);
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
 		
 		

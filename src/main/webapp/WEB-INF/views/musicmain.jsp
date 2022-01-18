@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="resources/logo.ico">
+<link rel="stylesheet" href="resources/css/musicmain.css">
 <title>Trifa's music</title>
 </head>
-<body>
-	
+<body id="bgcolor">
+	<script src="resources/js/musicmain.js"></script>
 </body>
 </html>
