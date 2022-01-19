@@ -35,7 +35,7 @@ public class MusicPlayerController {
 		model.addAttribute("artist", artist);
 		model.addAttribute("date", date);
 		
-		return "player/musicplayer";
+		return "musicplayer";
 	}
 	
 }

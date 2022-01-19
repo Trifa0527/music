@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 
-import db.MUSIC;
-
 public class MUSICDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -17,8 +15,8 @@ public class MUSICDAO {
 	public MUSICDAO() {
 		try {
 			String dbURL ="jdbc:mysql://yeonglim.cy1n2rtjhrmk.ap-northeast-2.rds.amazonaws.com/MUSIC?useSSL=false&;serverTimezone=Asia/Seoul&;useUnicode=true&characterEncoding=UTF-8\"";
-			String user = "rxtx";
-			String pw = "BCA2F422B80EFEE2971A4F19E5A42C1E";
+			String user = "trifa";
+			String pw = "4B0094B4BDE35526BB5A42FE9BBE5AAA";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, user, pw);
 		} catch (Exception e) {
@@ -43,78 +41,45 @@ public class MUSICDAO {
 		return -1;
 	}
 	
-	public int getID(String title) {
-		String SQL = "SELECT ID FROM INFO WHERE TITLE = ?";
+	public String[] getMusicInfo(String id) {
+		String[] music = new String[6];
+		String SQL = "SELECT * FROM MUSICLIST LEFT OUTER JOIN MUSICINFO ON MUSICINFO.MUSICID = MUSICLIST.MUSICID WHERE MUSICLIST.MUSICID=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, title);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getInt(1);
+			while(rs.next()) {
+				music[0] = rs.getString(1);
+				music[1] = rs.getString(2);
+				music[2] = rs.getString(3);
+				music[3] = rs.getString(4);
+				music[4] = rs.getString(5);
+				music[5] = rs.getString(6);
 			}
+			return music;
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1;
+		return music;
 	}
 	
-	public String getTitle(int id) {
-		String SQL = "SELECT TITLE FROM INFO WHERE ID = ?";
+	public String[] getAlbumInfo(String id) {
+		String[] album = new String[6];
+		String SQL = "SELECT * FROM ALBUMLIST LEFT OUTER JOIN ALBUMINFO ON ALBUMINFO.ALBUMID = ALBUMLIST.ALBUMID WHERE ALBUMLIST.ALBUMID=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, id);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getString(1);
+			while(rs.next()) {
+				album[0] = rs.getString(1);
+				album[1] = rs.getString(2);
+				album[2] = rs.getString(3);
+				album[3] = rs.getString(4);
 			}
+			return album;
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "db title error";
-	}
-	
-	public String getIntro(int id) {
-		String SQL = "SELECT INTRO FROM INFO WHERE ID = ?";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, id);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getString(1);
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "db intro error";
-	}
-	
-	public String getDate(int id) {
-		String SQL = "SELECT DATE FROM INFO WHERE ID = ?";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, id);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getString(1);
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "db intro error";
-	}
-	
-	public String getArtist(int id) {
-		String SQL = "SELECT DATE FROM INFO WHERE ID = ?";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, id);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getString(1);
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "db artist error";
+		return album;
 	}
 }
