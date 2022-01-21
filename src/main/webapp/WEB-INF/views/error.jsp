@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image/x-icon" href="resources/logo.ico">
-<title>${artist}-${title}</title>
+<title>Error</title>
 </head>
-<body style="background-color: #2D2058;"> 
-	
+<body>
+	에러 발생
 </body>
 </html>

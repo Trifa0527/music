@@ -1,13 +1,16 @@
 package com.trifa.music;
 
-import java.util.Locale;
+import java.sql.PreparedStatement;
+import java.util.Objects;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import db.MUSICDAO;
 
@@ -19,23 +22,37 @@ public class MusicPlayerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MusicPlayerController.class);
 	
-	@RequestMapping(value = "/player/{title}")
-	public String home(@PathVariable("title") String title, Locale locale, Model model) {
-		
-		MUSICDAO musicdao = new MUSICDAO();
-		title = title.replace("_", " ");
-		int id = musicdao.getID(title);
-		String intro = musicdao.getIntro(id);
-		String artist = musicdao.getArtist(id);
-		String date = musicdao.getDate(id);
-		date = date.replace("-", ".");
-		
-		model.addAttribute("title", title);
-		model.addAttribute("intro", intro);
-		model.addAttribute("artist", artist);
-		model.addAttribute("date", date);
-		
-		return "musicplayer";
+	@RequestMapping(value = "/player", method=RequestMethod.POST)
+	public String home(HttpServletRequest httpServletRequest, Model model) {
+		String test = "suc";
+		if(test.equals(httpServletRequest.getParameter("che"))) {
+			if(Objects.equals(null, httpServletRequest.getParameter("id"))) {
+				return "musicreadytoplay";
+			} else {
+				try {
+					MUSICDAO musicdb = new MUSICDAO();
+					
+					int id = Integer.parseInt(httpServletRequest.getParameter("id"));
+					// ID Process
+					
+					String[] info = musicdb.getMusicInfo(id);
+					
+					int aid = Integer.parseInt(info[1]);
+					// Album ID Process
+					
+					model.addAttribute("title", info[2]);
+					model.addAttribute("intro",info[3]);
+					model.addAttribute("artist", info[4]);
+					model.addAttribute("date", info[5]);
+					
+					return "musicplayer";
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+			
+		return "error";
 	}
 	
 }

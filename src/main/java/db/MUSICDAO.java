@@ -14,7 +14,7 @@ public class MUSICDAO {
 	
 	public MUSICDAO() {
 		try {
-			String dbURL ="jdbc:mysql://yeonglim.cy1n2rtjhrmk.ap-northeast-2.rds.amazonaws.com/MUSIC?useSSL=false&;serverTimezone=Asia/Seoul&;useUnicode=true&characterEncoding=UTF-8\"";
+			String dbURL ="jdbc:mysql://database.cvh4qmchwbxh.ap-northeast-2.rds.amazonaws.com:3306/MUSIC";
 			String user = "trifa";
 			String pw = "4B0094B4BDE35526BB5A42FE9BBE5AAA";
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -41,20 +41,20 @@ public class MUSICDAO {
 		return -1;
 	}
 	
-	public String[] getMusicInfo(String id) {
+	public String[] getMusicInfo(int id) {
 		String[] music = new String[6];
-		String SQL = "SELECT * FROM MUSICLIST LEFT OUTER JOIN MUSICINFO ON MUSICINFO.MUSICID = MUSICLIST.MUSICID WHERE MUSICLIST.MUSICID=?";
+		String SQL = "SELECT * FROM MUSICINFO WHERE MUSICID=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, id);
+			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				music[0] = rs.getString(1);
-				music[1] = rs.getString(2);
-				music[2] = rs.getString(3);
-				music[3] = rs.getString(4);
-				music[4] = rs.getString(5);
-				music[5] = rs.getString(6);
+				music[0] = rs.getString(1);		// ID
+				music[1] = rs.getString(2);		// Album Id
+				music[2] = rs.getString(3);		// Title
+				music[3] = rs.getString(4);		// Intro
+				music[4] = rs.getString(5);		// Artist
+				music[5] = rs.getString(6);		// Date
 			}
 			return music;
 		}catch (Exception e) {
@@ -63,23 +63,42 @@ public class MUSICDAO {
 		return music;
 	}
 	
-	public String[] getAlbumInfo(String id) {
-		String[] album = new String[6];
-		String SQL = "SELECT * FROM ALBUMLIST LEFT OUTER JOIN ALBUMINFO ON ALBUMINFO.ALBUMID = ALBUMLIST.ALBUMID WHERE ALBUMLIST.ALBUMID=?";
+	public String[] getAlbumInfo(int id) {
+		String[] album = new String[4];
+		String SQL = "SELECT * FROM ALBUMINFO WHERE ALBUMID=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, id);
+			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				album[0] = rs.getString(1);
-				album[1] = rs.getString(2);
-				album[2] = rs.getString(3);
-				album[3] = rs.getString(4);
+				album[0] = rs.getString(1);		// Album Id
+				album[1] = rs.getString(2);		// Album Ttile
+				album[2] = rs.getString(3);		// Album Intro
+				album[3] = rs.getString(4);		// Album Date 
 			}
 			return album;
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return album;
+	}
+	
+	public int[] getMusicIdInAlbum(int id) {
+		int[] ids = new int[11];
+		String SQL = "SELECT MUSICINFO.MUSICID FROM ALBUMINFO LEFT JOIN MUSICINFO ON MUSICINFO.ALBUMID = ALBUMINFO.ALBUMID WHERE ALBUMINFO.ALBUMID = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			int i = 0;
+			while(rs.next()) {
+				ids[i] = rs.getInt(1);
+				i++;
+			}
+			return ids;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ids;
 	}
 }

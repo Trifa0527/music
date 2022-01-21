@@ -3,6 +3,7 @@ setTimeout(function() {
   setTimeout(function() {
     const div = document.getElementById("symbol");
     div.remove();
+	document.check.submit();
   },3000);
 }, 1500);
 
