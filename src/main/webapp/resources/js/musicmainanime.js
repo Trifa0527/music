@@ -6,4 +6,3 @@ setTimeout(function() {
 	document.check.submit();
   },3000);
 }, 1500);
-

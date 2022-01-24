@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/musicmain.css">
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="resources/logo.ico">
 <title>${artist}-${title}</title>
