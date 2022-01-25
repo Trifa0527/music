@@ -8,7 +8,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="resources/logo.ico">
 <title>${artist}-${title}</title>
 </head>
-<body style="background-color: #2D2058;"> 
+<body style="background-color: #221436;"> 
 	
 </body>
 </html>

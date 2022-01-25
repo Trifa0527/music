@@ -22,7 +22,7 @@ public class MusicPlayerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MusicPlayerController.class);
 	
-	@RequestMapping(value = "/player", method=RequestMethod.POST)
+	@RequestMapping(value = "/player")
 	public String home(HttpServletRequest httpServletRequest, Model model) {
 		String test = "suc";
 		if(test.equals(httpServletRequest.getParameter("che"))) {
@@ -39,6 +39,8 @@ public class MusicPlayerController {
 					
 					int aid = Integer.parseInt(info[1]);
 					// Album ID Process
+					
+					String[] ainfo = musicdb.getAlbumInfo(aid);
 					
 					model.addAttribute("title", info[2]);
 					model.addAttribute("intro",info[3]);

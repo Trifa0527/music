@@ -2,7 +2,7 @@
 
 #bgcolor{
 	background-color: black;
-	transition: background-color 2s;
+	transition: background-color 1s;
 }
 #symbol{
 	position: absolute;
@@ -11,6 +11,7 @@
 	left: 50%;
 	margin-top: -26%;
 	margin-left: -10%;
+	pointer-events: none;
 }
 #symbol:before {
 	content: "";
@@ -26,13 +27,7 @@
 .letter{
 	width: 100%;
 	margin-top: 10%;
-	background-color: blue;
 	text-align: center;
-}
-.letter:before{
-	content: "";
-	display: block;
-	padding-top: 20%;
 }
 .logopng{
 	width: 100%;
