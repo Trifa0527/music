@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#selected{
+	position:absolute;
+	width: 30%;
+    left:50%;
+    top:50%;
+    margin-left:-15%;
+    margin-top:-15%;
+    border-radius: 27px / 27px;
+	background-color: red;
+}
+#selected:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+#left{
+	width: 20%;
+	position:absolute;
+    left:20%;
+    top:50%;
+    margin-left:-15%;
+    margin-top:-10%;
+    border-radius: 27px / 27px;
+	background-color: blue;
+}
+#left:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+#right{
+	width: 20%;
+	position:absolute;
+    left:90%;
+    top:50%;
+    margin-left:-15%;
+    margin-top:-10%;
+    border-radius: 27px / 27px;
+	background-color: orange;
+}
+#right:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}

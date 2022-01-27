@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#pic{
+	width: 35%;
+	border-radius: 27px / 27px;
+    margin-top: 4%;	
+    margin-left: 4%
+}
+.alpic{
+	width: 100%;
+}
+#info{
+	width: 50%;
+	height: 30%;
+}

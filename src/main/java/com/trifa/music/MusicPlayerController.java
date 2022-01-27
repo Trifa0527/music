@@ -47,6 +47,10 @@ public class MusicPlayerController {
 					model.addAttribute("artist", info[4]);
 					model.addAttribute("date", info[5]);
 					
+					model.addAttribute("atitle", ainfo[1]);
+					model.addAttribute("aintro",ainfo[2]);
+					model.addAttribute("adate", ainfo[3]);
+					
 					return "musicplayer";
 				}catch (Exception e) {
 					e.printStackTrace();
