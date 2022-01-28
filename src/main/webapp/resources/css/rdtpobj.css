@@ -1,6 +1,33 @@
 @charset "UTF-8";
 
-#pic{
+.sct {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	background-color: red;
+    border-radius: 7% / 7%;
+}
+.lct {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	background-color: blue;
+    border-radius: 7% / 7%;
+}
+.rct {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	background-color: orange;
+    border-radius: 7% / 7%;
+}
+.pic{
 	width: 35%;
 	border-radius: 27px / 27px;
     margin-top: 4%;	
@@ -9,7 +36,19 @@
 .alpic{
 	width: 100%;
 }
-#info{
+.info{
+	position: absolute;
+	left: 45%;
+	top: 4%;
+	background-color: black;
 	width: 50%;
-	height: 30%;
+	height: 35%;
+}
+.intro{
+	position: absolute;
+	left: 7.5%;
+	top: 47%;
+	background-color: black;
+	width: 85%;
+	height: 45%;
 }
