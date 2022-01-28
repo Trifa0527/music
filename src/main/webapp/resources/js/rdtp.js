@@ -44,6 +44,6 @@ setTimeout(function(){
 		setTimeout(function(){
     		var right = document.getElementById("right");
 			fadeIn(right, 0.1);
-		}, 800);
-	}, 800);
-}, 0);
+		}, 1000);
+	}, 1000);
+}, 100);

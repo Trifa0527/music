@@ -41,6 +41,6 @@ setTimeout(function(){
 		document.getElementById("bgcolor").style.backgroundColor = "#221436";
 		setTimeout(function(){
 			document.check.submit();
-		}, 850);
-	}, 500);
+		}, 650);
+	}, 300);
 }, 4500);

@@ -19,13 +19,16 @@
 	<div id="selected">
 		<div class="sct">
 			<div class="pic">
-				<img class="alpic" src="resources/mis.png">
+				<img class="alpic" src="resources/img/alpic/${aid}" onerror="this.src='resources/mis.png'">
 			</div>
 			<div class="info">
-			
+				<p class="title">${title}</p>
+				<p class="album">${atitle}</p>
+				<p class="artist">${artist}</p>
+				<p class="date">${date}</p>
 			</div>
 			<div class="intro">
-				
+				<p class="introcon">${intro}</p>
 			</div>
 		</div>
 	</div>

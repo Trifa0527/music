@@ -27,7 +27,11 @@ public class MusicPlayerController {
 		String test = "suc";
 		if(test.equals(httpServletRequest.getParameter("che"))) {
 			if(Objects.equals(null, httpServletRequest.getParameter("id"))) {
-				return "musicreadytoplay";
+				try {
+					return "musicreadytoplay";
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
 			} else {
 				try {
 					MUSICDAO musicdb = new MUSICDAO();
@@ -47,6 +51,7 @@ public class MusicPlayerController {
 					model.addAttribute("artist", info[4]);
 					model.addAttribute("date", info[5]);
 					
+					model.addAttribute("aid", aid);
 					model.addAttribute("atitle", ainfo[1]);
 					model.addAttribute("aintro",ainfo[2]);
 					model.addAttribute("adate", ainfo[3]);
