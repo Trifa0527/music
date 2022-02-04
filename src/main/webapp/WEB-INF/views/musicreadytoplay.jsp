@@ -12,19 +12,21 @@
 </head>
 <body style="background-color: #221436;">
 	<div id="left">
-		<div class="lct">
-		
+		<div class="lct lrt">
+			<img class="lfpic alpic lrpic" src="" onerror="this.src='resources/mis.png'">
 		</div>
 	</div>
 	<div id="selected">
 		<div class="sct">
 			<div class="pic">
-				<img class="alpic" src="resources/img/alpic/${aid}" onerror="this.src='resources/mis.png'">
+				<img class="alpic alpicbor" src="resources/img/alpic/${aid}" onerror="this.src='resources/mis.png'">
 			</div>
 			<div class="info">
 				<p class="title">${title}</p>
 				<p class="album">${atitle}</p>
-				<p class="artist">${artist}</p>
+				<div class="artistdiv">
+					<p class="artist">${artist}</p>
+				</div>
 				<p class="date">${date}</p>
 			</div>
 			<div class="intro">
@@ -33,8 +35,8 @@
 		</div>
 	</div>
 	<div id="right">
-		<div class="rct">
-		
+		<div class="rct lrt">
+			<img class="ripic alpic lrpic" src="" onerror="this.src='resources/mis.png'">
 		</div>
 	</div>
 </body>

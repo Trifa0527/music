@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 
 .sct {
     position: absolute;
@@ -6,8 +11,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-	background-color: red;
     border-radius: 7% / 7%;
+    border: solid 2px;
+    border-color: #B091FA;
 }
 .lct {
     position: absolute;
@@ -15,8 +21,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-	background-color: blue;
-    border-radius: 7% / 7%;
 }
 .rct {
     position: absolute;
@@ -24,14 +28,21 @@
     right: 0;
     bottom: 0;
     left: 0;
-	background-color: orange;
-    border-radius: 7% / 7%;
+}
+.lrt{
+	border-radius: 7% / 7%;
+    border: solid 2px;
+    border-color: #B091FA;
 }
 .pic{
 	width: 35%;
 	border-radius: 27px / 27px;
-    margin-top: 4%;	
+    margin-top: 5%;	
     margin-left: 4%
+}
+.lrpic{
+	filter: brightness(50%);
+	border-radius: 7% / 7%;
 }
 .alpic{
 	width: 100%;
@@ -42,19 +53,70 @@
 	-ms-user-select: none; 
 	-webkit-user-select: none;
 }
+.alpicbor{
+    border-radius: 12% / 12%;
+}
 .info{
 	position: absolute;
 	left: 45%;
-	top: 4%;
-	background-color: black;
+	top: 5%;
 	width: 50%;
 	height: 35%;
+    border-radius: 7% / 10%;
 }
 .intro{
 	position: absolute;
-	left: 7.5%;
+	left: 4.5%;
 	top: 47%;
-	background-color: black;
-	width: 85%;
+	width: 90%;
 	height: 45%;
+}
+.title{
+	white-space: nowrap;
+	overflow: hidden;
+	font-family: Georgia, "Gowun Batang", serif;
+	font-size: 1.4vw;
+	margin-top: 1%;
+	margin-left: 5%;
+	margin-bottom: 0;
+	width: 90%;
+	color: white;
+}
+.album{
+	font-family: 'Work Sans', 'Nanum Myeongjo', serif;;
+	font-size: 0.8vw;
+	margin-top: -0%;
+	margin-bottom: 0;
+	margin-left: 5%;
+	width: 90%;
+	color: #979797;
+}
+.artistdiv{
+	margin-left: 5%;
+	margin-top: 4%;
+	margin-bottom: 0;
+	width: 90%;
+	height: 45%;
+}
+.artist{
+	font-family: Georgia, 'Noto Sans KR', sans-serif;;
+	font-size: 1.2vw;
+	color: white;
+}
+.date{
+	font-family: Georgia;
+	font-size: 0.9vw;
+	margin-left: 5%;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 90%;
+	color: gray;
+}
+.introcon{
+	font-family: 'Noto Serif KR', serif;
+	font-size: 1.3vw;
+	margin-top: 2%;
+	margin-left: 5%;
+	width: 90%;
+	color: white;
 }
