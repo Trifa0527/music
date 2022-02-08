@@ -28,11 +28,19 @@ public class MusicPlayerController {
 		if(test.equals(httpServletRequest.getParameter("che"))) {
 			if(Objects.equals(null, httpServletRequest.getParameter("id"))) {
 				try {
+					int[] ra = {1, 2, 3, 4, 5};
+					
 					model.addAttribute("title", "Title 제목");
 					model.addAttribute("intro","Intro 인트로");
 					model.addAttribute("artist", "Artist 제작자");
 					model.addAttribute("date", "2022.02.04");
 					model.addAttribute("atitle", "Album 앨범");
+					
+					model.addAttribute("ra1", ra[0]);
+					model.addAttribute("ra2", ra[1]);
+					model.addAttribute("ra3", ra[2]);
+					model.addAttribute("ra4", ra[3]);
+					model.addAttribute("ra5", ra[4]);
 					return "musicreadytoplay";
 				}catch (Exception e) {
 					e.printStackTrace();
