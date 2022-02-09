@@ -36,6 +36,9 @@ function changeOpacity(target, level) {
 }
 
 setTimeout(function(){
+	const set = document.getElementsByName("set")[0];
+	set.click();
+	set.remove();
     var sted = document.getElementById("selected");
 	fadeIn(sted, 0.1);
 	setTimeout(function(){
