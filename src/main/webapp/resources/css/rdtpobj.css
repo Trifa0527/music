@@ -46,12 +46,14 @@
     left: 0;
 }
 .lrt{
+	overflow: hidden;
 	border-radius: 7% / 7%;
     border: solid 2px;
     border-color: #B091FA;
 }
 .pic{
 	width: 35%;
+	height: 35%;
 	border-radius: 27px / 27px;
     margin-top: 5%;	
     margin-left: 4%
@@ -62,6 +64,7 @@
 }
 .alpic{
 	width: 100%;
+	height: 100%;
 	pointer-events : none;
 	-webkit-touch-callout: none; 
 	user-select: none; 
