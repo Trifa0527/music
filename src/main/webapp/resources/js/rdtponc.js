@@ -68,8 +68,8 @@ function setlr(lf, ce, ri, s){
 		setTimeout(function(){
 			document.getElementsByClassName("lra")[0].style.pointerEvents = "";
 			document.getElementsByClassName("lra")[1].style.pointerEvents = "";
-		}, 200)
-	}, 350);
+		}, 100)
+	}, 250);
 }
 function next(lr){
 	if(lr == 1){
@@ -83,7 +83,7 @@ function next(lr){
 		}else if(ri == -1){
 			ri = 4;
 		}
-		setlr(lf, ce, ri, 0.15)
+		setlr(lf, ce, ri, 0.25)
 	}else if(lr == 2){
 		lf += 1;
 		ce += 1;
@@ -95,6 +95,6 @@ function next(lr){
 		}else if(ri == 5){
 			ri = 0;
 		}
-		setlr(lf, ce, ri, 0.15)
+		setlr(lf, ce, ri, 0.25)
 	}
 }
