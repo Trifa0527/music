@@ -101,4 +101,21 @@ public class MUSICDAO {
 		}
 		return ids;
 	}
+	
+	public int[] getRandomMusicId() {
+		int[] ra = new int[4];
+		String SQL = "SELECT MUSICID FROM MUSICINFO ORDER BY RAND() LIMIT 5";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			int i = 0;
+			while(rs.next()) {
+				ra[i] = rs.getInt(1);
+				i++;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ra;
+	}
 }

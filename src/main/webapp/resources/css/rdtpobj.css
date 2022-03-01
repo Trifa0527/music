@@ -139,3 +139,7 @@
 	width: 90%;
 	color: white;
 }
+.n{
+	display: none;
+	opacity: 0;
+}

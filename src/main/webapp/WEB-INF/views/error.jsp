@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="3; url=/"/>	
+<meta http-equiv="refresh" content="0; url=/music"/>	
 <title>Error</title>
 </head>
-<body>
-	에러 발생	
+<body style="background-color: black;">
+	<p style="color: white;">에러 발생</p>
 </body>
 </html>

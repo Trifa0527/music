@@ -28,13 +28,28 @@ public class MusicPlayerController {
 		if(test.equals(httpServletRequest.getParameter("che"))) {
 			if(Objects.equals(null, httpServletRequest.getParameter("id"))) {
 				try {
-					int[] ra = {1, 2, 3, 4, 5};
+					// MUSICDAO musicdb = new MUSICDAO();
+					// int[] ra = musicdb.getRandomMusicId();
 					
-					model.addAttribute("title", "Title Á¦¸ñ");
-					model.addAttribute("intro","Intro ÀÎÆ®·Î");
-					model.addAttribute("artist", "Artist Á¦ÀÛÀÚ");
-					model.addAttribute("date", "2022.02.04");
-					model.addAttribute("atitle", "Album ¾Ù¹ü");
+					int[] ra = {1, 2, 3, 4, 5};
+					for(int i = 0; i < 5; i++) {
+						model.addAttribute("title" + i, "Title ì œëª©" + i);
+						model.addAttribute("intro" + i,"Intro ì¸íŠ¸ë¡œ" + i);
+						model.addAttribute("artist" + i, "Artist ì•„í‹°ìŠ¤íŠ¸" + i);
+						model.addAttribute("date" + i, "2022.02.04" + i);
+						model.addAttribute("atitle" + i, "Album ì•¨ë²”" + i);
+						/*						
+						String[] info = musicdb.getMusicInfo(ra[i]);
+						String atitle = musicdb.getAlbumInfo(info[1])[1];
+						
+						model.addAttribute("title" + i, info[2]);
+						model.addAttribute("intro" + i, info[3];
+						model.addAttribute("artist" + i, info[4]);
+						model.addAttribute("date" + i, info[5]);
+						model.addAttribute("atitle" + i, atitle};
+						 */
+					}
+					
 					
 					model.addAttribute("ra1", ra[0]);
 					model.addAttribute("ra2", ra[1]);
@@ -54,21 +69,23 @@ public class MusicPlayerController {
 					
 					String[] info = musicdb.getMusicInfo(id);
 					
-					int aid = Integer.parseInt(info[1]);
+					//int aid = Integer.parseInt(info[1]);
 					// Album ID Process
 					
-					String[] ainfo = musicdb.getAlbumInfo(aid);
+					//String[] ainfo = musicdb.getAlbumInfo(aid);
+					
+					System.out.println(id);
 					
 					model.addAttribute("title", info[2]);
 					model.addAttribute("intro",info[3]);
 					model.addAttribute("artist", info[4]);
 					model.addAttribute("date", info[5]);
-					
+					/*
 					model.addAttribute("aid", aid);
 					model.addAttribute("atitle", ainfo[1]);
 					model.addAttribute("aintro",ainfo[2]);
 					model.addAttribute("adate", ainfo[3]);
-					
+					*/
 					return "musicplayer";
 				}catch (Exception e) {
 					e.printStackTrace();
