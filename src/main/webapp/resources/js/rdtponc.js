@@ -102,6 +102,7 @@ function next(lr){
 	}
 }
 function toplay(){
+	
 	var url = "";
 	var form = document.createElement('form');
     form.setAttribute('method', 'post');
@@ -110,15 +111,15 @@ function toplay(){
     var hiddenField = document.createElement('input');
     hiddenField.setAttribute('type', 'hidden');
     hiddenField.setAttribute('name', 'id');
-    hiddenField.setAttribute('value', ce);
+    hiddenField.setAttribute('value', ra[ce]);
     
     var hiddenField2 = document.createElement('input');
     hiddenField2.setAttribute('type', 'hidden');
     hiddenField2.setAttribute('name', 'che');
     hiddenField2.setAttribute('value', 'suc');
+    
     form.appendChild(hiddenField);
     form.appendChild(hiddenField2);
-    
     
     document.body.appendChild(form);
     form.submit();

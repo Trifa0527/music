@@ -103,7 +103,7 @@ public class MUSICDAO {
 	}
 	
 	public int[] getRandomMusicId() {
-		int[] ra = new int[4];
+		int[] ra = new int[5];
 		String SQL = "SELECT MUSICID FROM MUSICINFO ORDER BY RAND() LIMIT 5";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);

@@ -24,7 +24,6 @@
 		</div>
 	</div>
 	<form name="check" method="POST" action="player">
-		<input type="hidden" name="che" value="suc">
 	</form>
 </body>
 </html>

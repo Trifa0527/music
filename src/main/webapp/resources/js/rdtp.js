@@ -35,6 +35,8 @@ function changeOpacity(target, level) {
 	obj.style.filter = "alpha(opacity=" + (level * 100) + ");";
 }
 
+
+
 setTimeout(function(){
 	const set = document.getElementsByName("set")[0];
 	set.click();
@@ -43,12 +45,7 @@ setTimeout(function(){
 	document.getElementsByClassName("lra")[1].style.pointerEvents = "none";
     var sted = document.getElementById("selected");
 	fadeIn(sted, 0.1);
-	setTimeout(function(){
-    	var left = document.getElementById("left");
-		fadeIn(left, 0.1);
-		setTimeout(function(){
-    		var right = document.getElementById("right");
-    		var title = document.getElementsByClassName("t0")[0];
+	var title = document.getElementsByClassName("t0")[0];
     		var intro = document.getElementsByClassName("i0")[0];
     		var artist = document.getElementsByClassName("at0")[0];
     		var album = document.getElementsByClassName("a0")[0];
@@ -58,26 +55,29 @@ setTimeout(function(){
     		artist.style.display="block";
     		album.style.display="block";
     		date.style.display="block";
-			fadeIn(right, 0.1);
 			setTimeout(function(){
 				fadeIn(title, 0.1);
 					setTimeout(function(){
-					fadeIn(album, 0.1);
+						fadeIn(album, 0.1);
 						setTimeout(function(){
-						fadeIn(artist, 0.1);
+							fadeIn(artist, 0.1);
 							setTimeout(function(){
-							fadeIn(date, 0.1);
+								fadeIn(date, 0.1);
 								setTimeout(function(){
-								fadeIn(intro, 0.1);
-								setTimeout(function(){
-									document.getElementsByClassName("lra")[0].style.pointerEvents = "";
-									document.getElementsByClassName("lra")[1].style.pointerEvents = "";
-								}, 100)
-						}, 100);
+									fadeIn(intro, 0.1);
+									setTimeout(function(){
+										document.getElementsByClassName("lra")[0].style.pointerEvents = "";
+										document.getElementsByClassName("lra")[1].style.pointerEvents = "";
+									}, 100)
+								}, 100);
+							}, 100);
 						}, 100);
 					}, 100);
-				}, 100);
-			}, 400);
-		}, 600);
+				}, 400);
+	setTimeout(function(){
+    	var left = document.getElementById("left");
+		fadeIn(left, 0.1);
+		var right = document.getElementById("right");
+		fadeIn(right, 0.1);s
 	}, 600);
-}, 100);
+}, 200);
