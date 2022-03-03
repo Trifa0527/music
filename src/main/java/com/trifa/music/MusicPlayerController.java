@@ -60,7 +60,7 @@ public class MusicPlayerController {
 				
 				String[] info = musicdb.getMusicInfo(id);
 				
-				//int aid = Integer.parseInt(info[1]);
+				//int aid = Integer.parseInt(info[1]); 
 				// Album ID Process
 					
 				//String[] ainfo = musicdb.getAlbumInfo(aid);
