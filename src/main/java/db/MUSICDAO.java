@@ -24,15 +24,32 @@ public class MUSICDAO {
 		}
 	}
 	
-	public int Upload(String title, String intro, String artist) {
-		String SQL = "INSERT INTO INFO(ID, TITLE, INTRO, DATE, ARTIST) VALUES(?, ?, ?, NOW(), ?)";
+	public int Upload(String title, String intro, String artist, int alId) {
+		String SQL = "INSERT INTO MUSICINFO(MUSICID, ALBUMID, MUSICTITLE, MUSICINTRO, MUSICARTIST, MUSICDATE) VALUES(?, ?, ?, ?, ?, NOW())";
 		try {
 			int i = 0;
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, i);
-			pstmt.setString(1, title);
-			pstmt.setString(1, intro);
-			pstmt.setString(1, artist);
+			pstmt.setInt(2, alId);
+			pstmt.setString(3, title);
+			pstmt.setString(4, intro);
+			pstmt.setString(5, artist);
+			rs = pstmt.executeQuery();
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int createAlbum(String title, String intro) {
+		String SQL = "INSERT INTO ALBUMINFO(ALBUMID, ALBUMTITLE, ALBUMINTRO, ALBUMDATE) VALUES(?, ?, ?, NOW())";
+		try {
+			int i = 0;
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, i);
+			pstmt.setString(2, title);
+			pstmt.setString(3, intro);
 			rs = pstmt.executeQuery();
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
