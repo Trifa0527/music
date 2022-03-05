@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="resources/upload.ico">
+<link rel="shortcut icon" type="image/x-icon" href="${ a}">
 <meta charset="UTF-8">
 <title>Album</title>
 </head>
 <body>
-	<form action="/upload/action" method="post" enctype="multipart/form-data">
+	<form action="./album/action" method="post" enctype="multipart/form-data">
+		<input type="file" name="file">
 		<input placeholder="altitle" type="text" name="title">
 		<input placeholder="alintro" type="text" name="intro">
 		<input placeholder="album" type="text" name="album">

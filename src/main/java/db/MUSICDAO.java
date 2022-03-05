@@ -34,8 +34,20 @@ public class MUSICDAO {
 			pstmt.setString(3, title);
 			pstmt.setString(4, intro);
 			pstmt.setString(5, artist);
-			rs = pstmt.executeQuery();
-			return pstmt.executeUpdate();
+			aUpdate(alId);
+			return i;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int aUpdate(int aid) {
+		String SQL = "UPDATE ALBUMINFO ALBUMDATE = NOW() WHERE ALBUMID = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, aid);
+			return 0;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

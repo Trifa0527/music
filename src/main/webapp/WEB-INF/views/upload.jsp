@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" type="image/x-icon" href="${ a}">
 <meta charset="UTF-8">
 <title>Uploads</title>
 </head>
@@ -10,7 +11,7 @@
 	<form action="./upload/action" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
 		<input placeholder="title" type="text" name="title">
-		<input placeholder="intro" type="text" name="intro">
+		<textarea placeholder="intro" name="intro"></textarea>
 		<input placeholder="artist" type="text" name="artist">
 		<input placeholder="album" type="text" name="album">
         <input type="submit">
