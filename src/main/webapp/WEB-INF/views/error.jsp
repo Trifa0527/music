@@ -8,6 +8,6 @@
 <title>Error</title>
 </head>
 <body style="background-color: black;">
-	<p style="color: white;">에러 발생</p>
+	<!-- <p style="color: white;">에러 발생</p> -->
 </body>
 </html>
